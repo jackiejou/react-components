@@ -12,10 +12,10 @@ class GroceryListItem extends React.Component {
   }
   render () {
     var style = {
-      textDecoration: this.state.clicked ? 'line-through' : 'none'
+      fontWeight: this.state.clicked ? 'bold' : ''
     };
     return (
-      <li style={style} onClick={this.onListItemClick.bind(this)}>{this.props.item}</li>
+      <li style={style} onMouseEnter={this.onListItemClick.bind(this)} onMouseLeave={this.onListItemClick.bind(this)}>{this.props.item}</li>
     )
   }
 }
