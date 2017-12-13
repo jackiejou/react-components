@@ -15,19 +15,19 @@ class GroceryListItem extends React.Component {
       textDecoration: this.state.clicked ? 'line-through' : 'none'
     };
     return (
-      <li style = {style} onClick={this.onListItemClick.bind(this)}>{this.props.item}</li>
+      <li style={style} onClick={this.onListItemClick.bind(this)}>{this.props.item}</li>
     )
   }
 }
 var GroceryList = (props) => (
   <ul>
     {props.list.map((listItem) =>
-      <GroceryListItem item = {listItem}/>
+      <GroceryListItem key={listItem.toString()} item={listItem}/>
     )}
   </ul>
 );
 
 ReactDOM.render(
-  <GroceryList list= {['Apple', 'Kale', 'Cucumbers', 'Banana']}/>,
+  <GroceryList list={['Apple', 'Kale', 'Cucumbers', 'Banana']}/>,
   document.getElementById('app')
 );
